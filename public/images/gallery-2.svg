@@ -1,0 +1,14 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gallery-2-bg" x1="140" y1="70" x2="1030" y2="1340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7F7"/>
+      <stop offset="1" stop-color="#F3E0D9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" rx="40" fill="url(#gallery-2-bg)"/>
+  <rect x="34" y="34" width="1132" height="1332" rx="28" stroke="#C78A8A" stroke-opacity="0.4" stroke-width="2"/>
+  <path d="M245 302C319 217.333 440.667 175 610 175C779.333 175 901 217.333 975 302" stroke="#C78A8A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M282 872C373.333 744.667 485.333 681 618 681C750.667 681 863.333 744.667 956 872" stroke="#7F1F31" stroke-opacity="0.17" stroke-width="22" stroke-linecap="round"/>
+  <text x="600" y="1100" text-anchor="middle" fill="#7F1F31" font-family="Georgia, serif" font-size="80">Pre-Wedding Memory</text>
+  <text x="600" y="1172" text-anchor="middle" fill="#65575D" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">UPLOAD A CANDID MOMENT</text>
+</svg>

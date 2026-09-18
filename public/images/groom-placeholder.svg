@@ -1,0 +1,16 @@
+<svg width="960" height="1180" viewBox="0 0 960 1180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="groom-bg" x1="120" y1="40" x2="820" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#F6E7D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1180" rx="44" fill="url(#groom-bg)"/>
+  <rect x="34" y="34" width="892" height="1112" rx="32" stroke="#BC9451" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M201 217C234.333 164.333 295.333 138 384 138C479.333 138 540.333 164.333 567 217" stroke="#7F1F31" stroke-opacity="0.42" stroke-width="18" stroke-linecap="round"/>
+  <path d="M287 562C287 437.778 382.778 342 507 342C631.222 342 727 437.778 727 562V836H287V562Z" fill="#7F1F31" fill-opacity="0.10"/>
+  <circle cx="507" cy="292" r="122" fill="#7F1F31" fill-opacity="0.11"/>
+  <path d="M262 873H752V902C752 941.765 719.765 974 680 974H334C294.235 974 262 941.765 262 902V873Z" fill="#7F1F31" fill-opacity="0.08"/>
+  <text x="480" y="1000" text-anchor="middle" fill="#7F1F31" font-family="Georgia, serif" font-size="64">Groom Portrait</text>
+  <text x="480" y="1064" text-anchor="middle" fill="#5A4851" font-family="Arial, sans-serif" font-size="30" letter-spacing="7">REPLACE WITH PHOTO</text>
+</svg>

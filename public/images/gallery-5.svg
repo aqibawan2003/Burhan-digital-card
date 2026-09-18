@@ -1,0 +1,16 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gallery-5-bg" x1="140" y1="60" x2="1050" y2="1336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7EC"/>
+      <stop offset="1" stop-color="#F2DEC2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" rx="40" fill="url(#gallery-5-bg)"/>
+  <rect x="34" y="34" width="1132" height="1332" rx="28" stroke="#BC9451" stroke-opacity="0.36" stroke-width="2"/>
+  <path d="M253 319C369.667 213 481.333 160 588 160C694.667 160 806.333 213 923 319" stroke="#BC9451" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="397" cy="516" r="122" fill="#C78A8A" fill-opacity="0.2"/>
+  <circle cx="606" cy="516" r="122" fill="#BC9451" fill-opacity="0.2"/>
+  <circle cx="815" cy="516" r="122" fill="#7F1F31" fill-opacity="0.13"/>
+  <text x="600" y="1100" text-anchor="middle" fill="#7F1F31" font-family="Georgia, serif" font-size="80">Mehndi Colors</text>
+  <text x="600" y="1172" text-anchor="middle" fill="#65575D" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">UPLOAD COLORFUL DETAILS</text>
+</svg>

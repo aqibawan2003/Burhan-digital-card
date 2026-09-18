@@ -1,0 +1,16 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gallery-3-bg" x1="160" y1="96" x2="1042" y2="1330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F8EF"/>
+      <stop offset="1" stop-color="#E7E6D2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" rx="40" fill="url(#gallery-3-bg)"/>
+  <rect x="34" y="34" width="1132" height="1332" rx="28" stroke="#36584B" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="378" cy="428" r="98" fill="#36584B" fill-opacity="0.12"/>
+  <circle cx="598" cy="428" r="98" fill="#36584B" fill-opacity="0.16"/>
+  <circle cx="818" cy="428" r="98" fill="#36584B" fill-opacity="0.12"/>
+  <path d="M286 864C286 743.049 384.049 645 505 645H691C811.951 645 910 743.049 910 864V930H286V864Z" fill="#36584B" fill-opacity="0.12"/>
+  <text x="600" y="1090" text-anchor="middle" fill="#36584B" font-family="Georgia, serif" font-size="80">Family Celebration</text>
+  <text x="600" y="1162" text-anchor="middle" fill="#5F6660" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">ADD A FAMILY PHOTO</text>
+</svg>
