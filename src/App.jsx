@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   CalendarHeart,
-  Camera,
   ChevronDown,
   Clock3,
   Copy,
@@ -27,7 +26,6 @@ const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'couple', label: 'Couple' },
   { id: 'events', label: 'Events' },
-  { id: 'gallery', label: 'Gallery' },
   { id: 'venue', label: 'Venue' },
   { id: 'rsvp', label: 'RSVP' },
 ]
@@ -448,7 +446,7 @@ function App() {
                     <div className="mt-8 flex items-center justify-between gap-4 rounded-[1.5rem] border border-[var(--gold)]/30 bg-[rgba(255,245,225,0.75)] px-5 py-4">
                       <div>
                         <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[var(--crimson)]/65">
-                          Main Venue Highlight
+                          Main Venue
                         </p>
                         <p className="mt-2 text-sm leading-6 text-[var(--ink)]/75">
                           {weddingData.venue.name}, {weddingData.venue.address}
@@ -475,37 +473,49 @@ function App() {
               <Reveal>
                 <SectionHeading
                   eyebrow="The Couple"
-                  title="Two Hearts, One Sacred Celebration"
-                  description="This section combines the confirmed invitation details from the PDF with clearly marked placeholders where the scan did not provide names, photos, or a written story."
+                  title="A Blessed Union"
+                  description="Two families join together in celebration of this sacred bond."
                 />
               </Reveal>
 
               <div className="mt-10 grid gap-6 lg:grid-cols-2">
-                {[weddingData.couple.groom, weddingData.couple.bride].map((person, index) => (
-                  <Reveal key={person.role} delay={index * 0.08} y={36}>
-                    <article className="royal-panel card-lift rounded-[2rem] p-5 sm:p-6">
-                      <div className="grid gap-6 sm:grid-cols-[0.9fr_1.1fr] sm:items-center">
-                        <div className="overflow-hidden rounded-[1.65rem] border border-[rgba(127,31,49,0.10)] bg-white/70">
-                          <img
-                            src={person.image}
-                            alt={`${person.role} placeholder portrait`}
-                            loading="lazy"
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.30em] text-[var(--crimson)]/70">
-                            {person.role}
-                          </p>
-                          <h3 className="serif-display mt-4 text-4xl leading-none text-[var(--ink)]">
-                            {person.name}
-                          </h3>
-                          <p className="mt-4 text-base leading-8 text-[var(--ink)]/72">{person.intro}</p>
-                        </div>
+                <Reveal delay={0.08} y={36}>
+                  <article className="royal-panel card-lift rounded-[2rem] p-6 sm:p-8">
+                    <div className="text-center">
+                      <div className="mx-auto inline-flex h-28 w-28 items-center justify-center rounded-full border-2 border-[var(--gold)]/40 bg-[linear-gradient(135deg,rgba(189,147,64,0.12),rgba(255,248,237,0.95))]">
+                        <span className="serif-display text-6xl text-[var(--crimson)]">B</span>
                       </div>
-                    </article>
-                  </Reveal>
-                ))}
+                      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.30em] text-[var(--crimson)]/70">
+                        {weddingData.couple.groom.title}
+                      </p>
+                      <h3 className="serif-display mt-3 text-4xl leading-none text-[var(--ink)]">
+                        {weddingData.couple.groom.name}
+                      </h3>
+                      <p className="mt-4 text-base leading-8 text-[var(--ink)]/72">
+                        {weddingData.couple.groom.parents}
+                      </p>
+                    </div>
+                  </article>
+                </Reveal>
+
+                <Reveal delay={0.16} y={36}>
+                  <article className="royal-panel card-lift rounded-[2rem] p-6 sm:p-8">
+                    <div className="text-center">
+                      <div className="mx-auto inline-flex h-28 w-28 items-center justify-center rounded-full border-2 border-[var(--gold)]/40 bg-[linear-gradient(135deg,rgba(189,147,64,0.12),rgba(255,248,237,0.95))]">
+                        <span className="serif-display text-6xl text-[var(--crimson)]">B</span>
+                      </div>
+                      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.30em] text-[var(--crimson)]/70">
+                        {weddingData.couple.bride.title}
+                      </p>
+                      <h3 className="serif-display mt-3 text-4xl leading-none text-[var(--ink)]">
+                        {weddingData.couple.bride.name}
+                      </h3>
+                      <p className="mt-4 text-base leading-8 text-[var(--ink)]/72">
+                        {weddingData.couple.bride.parents}
+                      </p>
+                    </div>
+                  </article>
+                </Reveal>
               </div>
             </div>
           </section>
@@ -532,8 +542,8 @@ function App() {
               <Reveal>
                 <SectionHeading
                   eyebrow="Wedding Events"
-                  title="Every Celebration, Beautifully Timed"
-                  description="Each event below is mapped from the invitation scan, with dedicated direction links and schedule highlights for guests viewing the page on mobile."
+                  title="Three Days of Celebration"
+                  description="Join us for a weekend of joyous festivities, from Mehndi to Walima."
                 />
               </Reveal>
 
@@ -581,7 +591,7 @@ function App() {
                         ))}
                       </div>
 
-                      <p className="mt-6 text-sm leading-7 text-[var(--ink)]/62">{event.footer}</p>
+                      <p className="mt-6 text-sm leading-7 text-[var(--ink)]/62">{event.hostInfo}</p>
 
                       <a
                         href={event.mapsUrl}
@@ -598,39 +608,6 @@ function App() {
             </div>
           </section>
 
-          <section id="gallery" className="px-4 py-14 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl">
-              <Reveal>
-                <SectionHeading
-                  eyebrow="Photo Gallery"
-                  title="A Gallery Ready for Your Finest Memories"
-                  description="The PDF did not include couple photos, so the gallery is scaffolded with elegant local placeholders. Replace these files in /public/images whenever the real portraits are ready."
-                />
-              </Reveal>
-
-              <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {weddingData.gallery.map((item, index) => (
-                  <Reveal key={item.title} delay={index * 0.05} y={28}>
-                    <figure className="group overflow-hidden rounded-[1.9rem] border border-[rgba(127,31,49,0.11)] bg-white/70 shadow-[0_20px_60px_rgba(75,24,33,0.08)]">
-                      <div className="overflow-hidden">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          loading="lazy"
-                          className="h-80 w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                        />
-                      </div>
-                      <figcaption className="px-5 py-5">
-                        <p className="serif-display text-2xl leading-none text-[var(--ink)]">{item.title}</p>
-                        <p className="mt-2 text-sm leading-7 text-[var(--ink)]/66">{item.subtitle}</p>
-                      </figcaption>
-                    </figure>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
           <section className="px-4 py-14 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
               <Reveal>
@@ -641,10 +618,10 @@ function App() {
                     description={weddingData.story.message}
                     align="left"
                   />
-                  <div className="mt-6 space-y-4 text-base leading-8 text-[var(--ink)]/72">
-                    {weddingData.story.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                  <div className="mt-6 rounded-[1.5rem] border border-[rgba(127,31,49,0.10)] bg-white/70 p-6">
+                    <p className="text-base leading-8 text-[var(--ink)]/75">
+                      {weddingData.story.familyMessage}
+                    </p>
                   </div>
                 </article>
               </Reveal>
@@ -652,19 +629,24 @@ function App() {
               <Reveal delay={0.08}>
                 <article className="royal-panel rounded-[2rem] p-6 sm:p-8">
                   <SectionHeading
-                    eyebrow="Family & Hosts"
-                    title="With Love from the Families"
-                    description={weddingData.story.invitedBy}
+                    eyebrow="Family Contacts"
+                    title="For More Information"
+                    description="Please feel free to reach out to our family members."
                     align="left"
                   />
-                  <div className="mt-6 space-y-4 text-base leading-8 text-[var(--ink)]/72">
-                    {weddingData.story.familyContacts.map((contact) => (
+                  <div className="mt-6 space-y-3">
+                    {weddingData.story.familyContacts.map((contact, index) => (
                       <div
-                        key={contact}
+                        key={index}
                         className="flex items-start gap-3 rounded-[1.3rem] border border-[rgba(127,31,49,0.09)] bg-white/68 px-4 py-4"
                       >
                         <Phone className="mt-1 h-4 w-4 shrink-0 text-[var(--crimson)]" />
-                        <span>{contact}</span>
+                        <div>
+                          <p className="text-sm font-semibold text-[var(--ink)]">{contact.name}</p>
+                          {contact.phone && (
+                            <p className="mt-1 text-sm text-[var(--ink)]/68">{contact.phone}</p>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -688,7 +670,7 @@ function App() {
                   <article className="royal-panel rounded-[2rem] p-6 sm:p-8">
                     <div className="rounded-[1.85rem] border border-[rgba(127,31,49,0.12)] bg-[linear-gradient(135deg,rgba(118,22,39,0.98),rgba(83,25,41,0.94))] p-6 text-[var(--card-ivory)] sm:p-8">
                       <p className="text-xs font-semibold uppercase tracking-[0.30em] text-[rgba(255,239,205,0.78)]">
-                        Featured Walima Venue
+                        Walima Venue
                       </p>
                       <h3 className="serif-display mt-4 text-4xl leading-none text-white sm:text-5xl">
                         {weddingData.venue.name}
@@ -711,6 +693,9 @@ function App() {
 
                 <Reveal delay={0.06}>
                   <article className="royal-panel rounded-[2rem] p-6 sm:p-8">
+                    <p className="text-xs font-semibold uppercase tracking-[0.30em] text-[var(--crimson)]/70 mb-4">
+                      All Venues
+                    </p>
                     <div className="space-y-4">
                       {weddingData.events.map((event) => (
                         <div
@@ -823,16 +808,16 @@ function App() {
               <Reveal delay={0.06}>
                 <article className="royal-panel flex h-full flex-col rounded-[2rem] p-6 sm:p-8">
                   <SectionHeading
-                    eyebrow="Submission Preview"
-                    title="What Guests Will See"
-                    description="This preview confirms the UI behavior now. Hook this form to a backend later when you are ready to collect real responses."
+                    eyebrow="Confirmation"
+                    title="Your RSVP"
+                    description="Your response will be displayed here after submission."
                     align="left"
                   />
 
                   {rsvpConfirmation ? (
                     <div className="mt-8 space-y-4 rounded-[1.7rem] border border-[rgba(127,31,49,0.10)] bg-white/75 p-5 text-sm leading-7 text-[var(--ink)]/72">
                       <div className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-[rgba(255,245,225,0.88)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[var(--crimson)]/78">
-                        RSVP Saved Locally
+                        RSVP Received
                       </div>
                       <p>
                         <strong>Name:</strong> {rsvpConfirmation.name}
@@ -855,7 +840,7 @@ function App() {
                       <div>
                         <Users className="mx-auto h-10 w-10 text-[var(--crimson)]/70" />
                         <p className="mt-4 text-base leading-8 text-[var(--ink)]/68">
-                          Submit the RSVP form to preview the guest response card here.
+                          Submit the form to see your RSVP confirmation.
                         </p>
                       </div>
                     </div>
@@ -912,8 +897,8 @@ function App() {
                 <article className="royal-panel rounded-[2rem] p-6 sm:p-8">
                   <SectionHeading
                     eyebrow="Wishes Wall"
-                    title="Messages for the Couple"
-                    description="Fresh wishes appear at the top during the current browser session."
+                    title="Blessings for the Couple"
+                    description="Messages from family and friends."
                     align="left"
                   />
                   <div className="mt-8 space-y-4">
@@ -931,7 +916,7 @@ function App() {
                       <div className="rounded-[1.6rem] border border-dashed border-[rgba(127,31,49,0.18)] bg-white/55 px-6 py-8 text-center">
                         <HeartHandshake className="mx-auto h-10 w-10 text-[var(--crimson)]/72" />
                         <p className="mt-4 text-base leading-8 text-[var(--ink)]/68">
-                          No wishes added yet. Be the first guest to leave a blessing.
+                          No wishes added yet. Be the first to leave a blessing.
                         </p>
                       </div>
                     )}
@@ -940,45 +925,33 @@ function App() {
               </Reveal>
             </div>
           </section>
-
-          <section id="share" className="px-4 py-14 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl">
-              <Reveal>
-                <div className="section-band rounded-[2.2rem] px-6 py-8 sm:px-8 sm:py-10">
-                  <SectionHeading
-                    eyebrow="Music & Share"
-                    title="One Link, Ready to Send"
-                    description="This single-page invitation is designed to be shared as one polished link. Music playback is optional and activates once a soundtrack file is added to the project."
-                  />
-                  <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                    <button type="button" onClick={handleMusicToggle} className="cta-secondary justify-center">
-                      {musicPlaying ? <Pause className="h-4 w-4" /> : <Music2 className="h-4 w-4" />}
-                      {musicConfigured ? (musicPlaying ? 'Pause Music' : 'Play Music') : weddingData.music.audioSrc ? 'Upload wadding.mp3' : 'Add Music File'}
-                    </button>
-                    <button type="button" onClick={handleShare} className="cta-primary justify-center">
-                      <Copy className="h-4 w-4" />
-                      Share Invitation
-                    </button>
-                  </div>
-                  <div className="mt-8 grid gap-4 md:grid-cols-3">
-                    <div className="rounded-[1.5rem] border border-[rgba(127,31,49,0.10)] bg-white/78 px-5 py-5 text-center">
-                      <Camera className="mx-auto h-6 w-6 text-[var(--crimson)]" />
-                      <p className="mt-3 text-sm leading-7 text-[var(--ink)]/70">Replace placeholder images with your real photo set.</p>
-                    </div>
-                    <div className="rounded-[1.5rem] border border-[rgba(127,31,49,0.10)] bg-white/78 px-5 py-5 text-center">
-                      <Music2 className="mx-auto h-6 w-6 text-[var(--crimson)]" />
-                      <p className="mt-3 text-sm leading-7 text-[var(--ink)]/70">Add a local soundtrack later for a fuller invitation experience.</p>
-                    </div>
-                    <div className="rounded-[1.5rem] border border-[rgba(127,31,49,0.10)] bg-white/78 px-5 py-5 text-center">
-                      <Copy className="mx-auto h-6 w-6 text-[var(--crimson)]" />
-                      <p className="mt-3 text-sm leading-7 text-[var(--ink)]/70">Use the share button to copy or send the finished invitation URL.</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </section>
         </main>
+
+        <footer className="px-4 py-12 text-center sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto h-px w-24 bg-[linear-gradient(90deg,transparent,var(--gold),transparent)]" />
+            <p className="mt-8 serif-display text-3xl text-[var(--ink)]">
+              {weddingData.invitation.names.groom} &amp; {weddingData.invitation.names.bride}
+            </p>
+            <p className="mt-4 text-sm text-[var(--ink)]/60">
+              {weddingData.invitation.dateLabel} • {weddingData.invitation.city}
+            </p>
+            <div className="mt-8 flex justify-center gap-4">
+              <button
+                type="button"
+                onClick={handleMusicToggle}
+                className="action-button"
+              >
+                {musicPlaying ? <Pause className="h-4 w-4" /> : <Music2 className="h-4 w-4" />}
+                <span>{musicConfigured ? (musicPlaying ? 'Pause' : 'Music') : 'Music'}</span>
+              </button>
+              <button type="button" onClick={handleShare} className="action-button">
+                <Copy className="h-4 w-4" />
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+        </footer>
       </motion.div>
     </div>
   )
